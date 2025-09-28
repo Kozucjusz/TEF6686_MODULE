@@ -13,14 +13,20 @@ Projekt ten to w pełni funkcjonalny, kompaktowy moduł radiowy AM/FM. Sercem uk
 
 Projekt PCB został zrealizowany w technologii dwuwarstwowej, która jest wystarczająca dla optymalnego poprowadznia ścieżek. Wszystkie komponenty umieszczono na warstwie górnej, co upraszcza i przyspiesza proces montażu, zarówno ręcznego, jak i zautomatyzowanego. Warstwa dolna została niemal w całości pokryta wylewką miedzi połączoną z masą, tworząc niską impedancję powrotu prądu i skutecznie ekranując układ przed zakłóceniami elektromagnetycznymi (EMI/EMC). Na warstwie górnej przewidziano dedykowane, odsłonięte pola miedzi umożliwiające przylutowanie metalowego ekranu, co pozwala na dodatkowe odizolowanie wrażliwych obwodów wejściowych. Tory sygnałowe dla pasm AM i FM oraz linia zasilania anteny zostały starannie odseparowane i poprowadzone w sposób minimalizujący przesłuchy (crosstalk). Wyprowadzenia modułu rozmieszczono w standardowym rastrze 2,54 mm (0.1 cala), co zapewnia pełną kompatybilność z płytkami stykowymi i złączami goldpin, ułatwiając prototypowanie i integrację.
 
+<a href="url"><img src="schematics/pcb_clean.jpg" width=33% height=33%  ></a>
+<a href="url"><img src="schematics/pcb_all.jpg" width=33% height=33% ></a>
+<a href="url"><img src="schematics/pcb_shield.jpg" width=33% height=33% ></a>
+
+
 <h2>Oprogramowanie</h2>
 
-Oprogramowanie firmware zostało stworzone w języku C z wykorzystaniem bibliotek STM32 HAL. Do sterowania układem służą biblioteki (tef6686.c, tef6686.h), w których znajdują się funkcje odpowiedzialne za komunikację tunera radiowego poprzez magistralę I2C.
+Oprogramowanie zostało stworzone w języku C z wykorzystaniem bibliotek STM32 HAL. Do sterowania układem służą biblioteki (tef6686.c, tef6686.h), w których znajdują się funkcje odpowiedzialne za komunikację tunera radiowego poprzez magistralę I2C.
 Pierwszym etapem pracy programu jest sekwencja inicjalizacyjna, podczas której do pamięci wewnętrznej układu TEF6686 ładowany jest oficjalny firmware patch dostarczony przez producenta (NXP). Ten proces, zrealizowany zgodnie z notą aplikacyjną, jest niezbędny do odblokowania pełnej funkcjonalności i zapewnienia optymalnych parametrów pracy tunera. Funkcja TEF6686_Tune_To(), pozwala na intuicyjne wstrojenie odbiornika na zadaną częstotliwość za pomocą jednego wywołania. Program służy jedynie do sprawdzenia poprawnego działania układu. Zostanie on rozbudowany w wersji drugiej projektu.
 
 <h2>Błędy</h2>
 
-Dla prawidłowej wymiany danych zabrakło rezystorów podciągających.
+Dla prawidłowej wymiany danych zabrakło rezystorów podciągających,
+Błąd w footprincie tranzystora T1.
 
 <h2>Kompromisy projektowe</h2>
 
