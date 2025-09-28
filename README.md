@@ -8,6 +8,7 @@ Projekt ten to w pełni funkcjonalny, kompaktowy moduł radiowy AM/FM. Sercem uk
 <li>Niskopoziomowe programowanie: Oprogramowanie firmware dla mikrokontrolera STM32 napisane w C/C++ z wykorzystaniem bibliotek HAL.
 <li>Projekt PCB: Kompaktowa, dwuwarstwowa płytka drukowana.
 </ul>
+<a href="url"><img src="schematics/TEF6686_MODULE_sch.png" width=75% height=75%  ></a>
 
 <h2>PCB</h2>
 
