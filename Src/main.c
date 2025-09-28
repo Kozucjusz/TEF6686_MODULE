@@ -88,9 +88,6 @@ int main(void)
 
   while (1)
   {
-    //printf("hello");
-	  //HAL_UART_Transmit(&huart3, tx_buff, 10,1000);
-	  //send_string("chuj dupa cycki \n");
 	  HAL_Delay(500);
   }
 }
